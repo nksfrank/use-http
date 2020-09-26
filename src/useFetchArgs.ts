@@ -58,7 +58,7 @@ export default function useFetchArgs(
     } as Options
     if (overwriteGlobalOptions) return overwriteGlobalOptions(finalOptions)
     return finalOptions
-  }, [urlOrPathOrOptionsOrOverwriteGlobalOptions, overwriteGlobalOptions, context.options])
+  }, [urlOrPathOrOptionsOrOverwriteGlobalOptions, overwriteGlobalOptions, context.options, context.options.interceptors, context.options.headers])
 
   const requestInit = useMemo(() => pullOutRequestInit(options), [options])
 
